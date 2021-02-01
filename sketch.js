@@ -8,9 +8,9 @@ var gameState,readState;
 function preload(){
   dogImg = loadImage("images/dogImg.png");
   happyDog = loadImage("images/dogImg1.png");
-  garden=loadImage("Images/Garden.png");
-  washroom=loadImage("Images/Wash Room.png");
-  bedroom=loadImage("Images/Bed Room.png");  
+  garden=loadImage("images/garden.png");
+  washroom=loadImage("images/washroom.png");
+  bedroom=loadImage("images/bedroom.png");  
 }
 
 function setup() {
@@ -71,7 +71,7 @@ function draw() {
    }else{
     feed.show();
     addFood.show();
-    dog.addImage(sadDog);
+    dog.addImage(dogImg);
    }
 
     drawSprites();
@@ -87,7 +87,7 @@ function feedDog(){
   foodObj.updateFoodStock(foodObj.getFoodStock()-1);
   database.ref('/').update({
     Food:foodObj.getFoodStock(),
-    FeedTime:hour()
+    FeedTime:hour(),
     gameState:"Hungry"
   })
 }
