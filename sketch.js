@@ -8,16 +8,16 @@ var gameState,readState;
 function preload(){
   dogImg = loadImage("images/dogImg.png");
   happyDog = loadImage("images/dogImg1.png");
-  garden=loadImage("images/garden.png");
-  washroom=loadImage("images/washroom.png");
-  bedroom=loadImage("images/bedroom.png");  
+  garden=loadImage("images/virtual pet images/Garden.png");
+  washroom=loadImage("images/virtual pet images/Wash Room.png"); 
+  bedroom=loadImage("images/virtual pet images/Bed Room.png"); 
 }
 
 function setup() {
   database = firebase.database();
-  createCanvas(500, 500);
+  createCanvas(1000, 1000);
 
-  foodObj = new Food();
+  foodObj = new Foods();
   
   foodStock = database.ref('Food');
   foodStock.on("value",readStock);
@@ -37,11 +37,11 @@ dog.addImage(dogImg);
 dog.scale = 0.15;
 
 feed=createButton("Feed the dog");
-  feed.position(1100,390);
+  feed.position(700,85);
   feed.mousePressed(feedDog);
 
   addFood=createButton("Add Food");
-  addFood.position(1200,390);
+  addFood.position(800,85);
   addFood.mousePressed(addFoods);
 
 textSize(20);
