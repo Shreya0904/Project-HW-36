@@ -28,7 +28,13 @@ class Food {
     }
     display(){ 
         var x=700,y=100; 
-       
+        if(lastFed>=12){
+            text("Last Feed : "+ lastFed%12 + " PM", 50,30);
+        }else if(lastFed==0){
+            text("Last Feed : 12 AM",50,30);
+        }else{
+            text("Last Feed : "+ lastFed + " AM", 50,30);
+        }
         if(foodS!=0){ 
             for(var i=0;i<foodS;i++){
                  if(i%10==0){ 
@@ -42,7 +48,15 @@ class Food {
     }             
         
 
+bedroom(){
+    background(bedroom,500,500);
+}
 
+garden(){
+    background(garden,500,500);
+}
 
-
+washroom(){
+    background(washroom,500,500);
+}
 }
